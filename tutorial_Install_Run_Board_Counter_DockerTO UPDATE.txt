@@ -1,0 +1,48 @@
+Board_counter
+
+/---------------------------------------------------------------------------------/
+How to install board_counter on your laptop for the first time ?
+/---------------------------------------------------------------------------------/
+1. Install Docker desktop on you computer https://docs.docker.com/desktop/
+2. In the search bar type board_counter, you should see nimodeyv2868/board_counter:v7.1, click on pull. It will take a few minutes.
+3. Once the docker image is loaded, check that you should see it in your images list
+
+4. Create a directory board_counter
+5. Open a terminal (windows command or bash)
+6. Navigate to this directory using cd
+7. Once you are in this directory, we will create the container with the forward path for directory and port, type this command line:
+	docker run -v /your/local/path:/app/raw_images -p 8000:8000 -it --name board_counter nimodeyv2868/board_counter:v7.1
+	For example: 
+	docker run -v C:/Users/nimod/Documents/Board_counter/raw_images:/app/raw_images -p 8000:8000 -it --name board_counter nimodeyv2868/board_counter:v7.1
+	
+/---------------------------------------------------------------------------------/
+How to start running Board_counter Application ?
+/---------------------------------------------------------------------------------/
+1. Start Docker Desktop application (if not already running on your pc)
+2. Open a terminal in your Board_counter directory (in your file explorer, navigate to this directory and right click "Open in terminal"
+3. Start the container by typing: docker start board_counter
+4. Open a page in your browser with this adress or click on this link: http://127.0.0.1:8000/docs#
+
+Remark: Alternatively you can run the .bat file after changing inside your Board_counter directory path
+
+/---------------------------------------------------------------------------------/
+How to use Board_counter ?
+/---------------------------------------------------------------------------------/
+1. Download in your local directory Board_counter/raw_images, the images you want to predict or count
+2. Start Board_counter application (see above if not yet done)
+3. On the fastAPI page, click on POST
+10. Click Try it out
+11. You need to enter in the Request Body field the following informations:
+	"seuil_de_détection": is the level above which the detection will be counted (between 0 and 1)
+	"path": is the path of the image you want to predict (see above, load here the image in the directory you synchronize with Docker)
+	The next 4 values below are here, in case you want to restrict the counting a copping part of the image, it is recommended to start with values=0 (default) and then refine if needed to ajust the prediction.
+	"crop_horiz_min", "crop_horiz_max", "crop_vert_min", "crop_vert_max"
+12. Outcome of the prediction is shown in Server response below:
+	It shows a graph with the number of boards "Nombre de planches"
+	Each board has a number and a confidence level, that you can find back on the right graph.
+	
+Limits & bugs of this version:
+	- This model was trained on only 2 pictures, and one type of boards, it is therefore very limited, but this was not the intial purpose of this project.
+	- On version v6.0 there is an offset between the number of board/box on the pictures and the ones on the graph. Picture board number = Graph box number + 1. It is corrected in version v7.1.
+	
+

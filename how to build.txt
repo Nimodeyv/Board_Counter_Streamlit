@@ -1,0 +1,9 @@
+docker build -t boardcounter_streamlit .
+
+docker tag boardcounter_streamlit nimodeyv2868/board_counter_streamlit:v8.0
+
+docker run -p 8501:8501 --name boardcounter_streamlit nimodeyv2868/board_counter_streamlit:v8.0 
+
+docker push nimodeyv2868/board_counter_streamlit:v8.0
+
+
