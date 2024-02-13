@@ -12,5 +12,5 @@ It goes through all steps of a machine learning project, using different tools:
 
   You can pull the docker image with this commande *docker pull nimodeyv2868/board_counter_streamlit*
 
-  ![Alt text](./app/logo/Screenshot from 2024-02-13 08-56-26.png)
-
+![Screenshot from 2024-02-13 08-56-26](https://github.com/Nimodeyv/Board_Counter_Streamlit/assets/105541734/f933c4a5-a98a-4115-a791-ef6fffa44597)
+![Screenshot from 2024-02-13 09-06-05](https://github.com/Nimodeyv/Board_Counter_Streamlit/assets/105541734/f3c4608c-1eb1-4d9b-b448-d27f4fcd08c9)
