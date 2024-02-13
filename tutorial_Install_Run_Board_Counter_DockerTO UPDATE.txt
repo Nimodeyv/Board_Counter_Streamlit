@@ -1,5 +1,7 @@
 Board_counter
 
+streamlit run app.py
+
 /---------------------------------------------------------------------------------/
 How to install board_counter on your laptop for the first time ?
 /---------------------------------------------------------------------------------/
@@ -44,5 +46,7 @@ How to use Board_counter ?
 Limits & bugs of this version:
 	- This model was trained on only 2 pictures, and one type of boards, it is therefore very limited, but this was not the intial purpose of this project.
 	- On version v6.0 there is an offset between the number of board/box on the pictures and the ones on the graph. Picture board number = Graph box number + 1. It is corrected in version v7.1.
+	
+
 	
 
